@@ -5,6 +5,8 @@ import (
 	"log"
 	"net/http"
 
+	_ "github.com/qodrorid/godaemon"
+
 	"github.com/gorilla/mux"
 )
 

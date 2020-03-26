@@ -30,7 +30,7 @@ func main() {
 // GetIP gets a requests IP address by reading off the forwarded-for
 // header (for proxies) and falls back to use the remote address.
 func GetIP(r *http.Request) string {
-	forwarded := r.Header.Get("X-Real-IP")
+	forwarded := r.Header.Get("Host")
 	if forwarded != "" {
 		return forwarded
 	}

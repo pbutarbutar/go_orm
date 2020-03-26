@@ -22,7 +22,7 @@ func handleRequest() {
 	log.Fatal(http.ListenAndServe(":8081", myRouter))
 }
 func main() {
-	fmt.Println("Go ORM Belajarku")
+	fmt.Println("Go ORM Running PORT 8081")
 	InitialMigration()
 	handleRequest()
 }
@@ -30,7 +30,7 @@ func main() {
 // GetIP gets a requests IP address by reading off the forwarded-for
 // header (for proxies) and falls back to use the remote address.
 func GetIP(r *http.Request) string {
-	forwarded := r.Header.Get("X-FORWARDED-FOR")
+	forwarded := r.Header.Get("X-Real-IP")
 	if forwarded != "" {
 		return forwarded
 	}
